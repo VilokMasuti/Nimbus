@@ -29,12 +29,12 @@ const Hero = () => {
   // State for tracking the current slide (index)
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // useEffect hook to auto-advance the slide every 8 seconds
+  // useEffect hook to auto-advance the slide every 5 seconds
   useEffect(() => {
-    // Set an interval that updates the current slide every 8seconds
+    // Set an interval that updates the current slide every 5seconds
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length); // Loop back to the first slide after the last one
-    }, 8000);
+    }, 5000);
 
 
     // Clean up the interval on component unmount
