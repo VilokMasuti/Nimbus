@@ -10,7 +10,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <main className="font-light">
+    <main className="relative w-full min-h-screen overflow-hidden font-light">
       <Header />
       <Hero />
       <About />

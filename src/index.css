@@ -4,8 +4,22 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+html,
 body {
   margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
   font-family: 'Cormorant Garamond', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -13,4 +27,25 @@ body {
 
 .font-light {
   font-weight: 300;
+}
+
+/* Custom scrollbar styling if needed for specific elements */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  display: block;
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(155, 155, 155, 0.5);
+  border-radius: 20px;
+  border: transparent;
 }

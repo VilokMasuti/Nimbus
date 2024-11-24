@@ -29,12 +29,13 @@ const Hero = () => {
   // State for tracking the current slide (index)
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // useEffect hook to auto-advance the slide every 4 seconds
+  // useEffect hook to auto-advance the slide every 8 seconds
   useEffect(() => {
-    // Set an interval that updates the current slide every 4 seconds
+    // Set an interval that updates the current slide every 8seconds
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length); // Loop back to the first slide after the last one
-    }, 4000);
+    }, 8000);
+
 
     // Clean up the interval on component unmount
     return () => clearInterval(timer);
@@ -57,7 +58,7 @@ const Hero = () => {
         <motion.div
           key={currentSlide}
           initial={{ opacity: 0 }} // Start with opacity 0
-          animate={{ opacity: 1 }} // Fade in
+          animate={{ opacity: 5 }} // Fade in
           exit={{ opacity: 0 }} // Fade out when exiting
           transition={{ duration: 1 }} // Animation duration for fading in/out
           className="absolute inset-0"
@@ -122,16 +123,15 @@ const Hero = () => {
         className="absolute left-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors"
         aria-label="Previous slide"
       >
-        <ChevronLeft size={48} />
+        <ChevronLeft size={48} strokeWidth={1} />
       </button>
 
-      {/* Next slide button */}
       <button
         onClick={handleNextSlide}
         className="absolute right-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors"
         aria-label="Next slide"
       >
-        <ChevronRight size={48} />
+        <ChevronRight size={48} strokeWidth={1} />
       </button>
 
       {/* Slide counter */}
